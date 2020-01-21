@@ -1,32 +1,51 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <!-- NAV -->
+    <ul class="nav justify-content-center border-bottom">
+      <li class="nav-item">
+        <span class="nav-link">Select difficulty:</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Normal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Kidding</a>
+      </li>
+    </ul>
+    <!-- /NAV -->
+    <!-- GAMEFIELD -->
+    <GameField></GameField>
+
+    <!-- /GAMEFIELD -->
   </div>
 </template>
 
+<script>
+import GameField from './components/GameField.vue'
+export default {
+  components: {
+    GameField
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  background-color: $dark;
+  height: 100vh;
+  width: auto;
+  color: $white;
+  a {
+    color: $white;
+  }
+  a:hover {
+    color: $orange;
+  }
+  li {
+    cursor: pointer;
+  }
+  .border-bottom {
+    border-color: $black !important;
+  }
 }
 </style>

@@ -1,39 +1,58 @@
 <template>
   <div id="game-field">
     <button class="btn btn-primary">Start</button>
+
     <div class="row">
       <div class="col-md-6 pt-5">
-        <div class="human text-center">
-          <div class="h1">
-            <u>Human</u>
-          </div>
-          <i class="far fa-hand-rock"></i>
-          <div class="hand h3 mt-4">Paper</div>
-        </div>
+        <Human></Human>
       </div>
-
       <div class="col-md-6 pt-5">
-        <div class="computer text-center">
-          <div class="h1">
-            <u>Computer</u>
-          </div>
-          <i class="far fa-hand-paper"></i>
-          <div class="hand h3 mt-4">Paper</div>
-        </div>
+        <Computer></Computer>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Human from './Human.vue'
+import Computer from './Computer.vue'
+export default {
+  components: {
+    Human,
+    Computer
+  },
+  props: {
+    difficulty: String
+  }
+}
 </script>
 
 <style lang="scss">
 #game-field {
-  i {
+  .far {
+    cursor: pointer;
     font-size: 300px;
+    width: 350px;
+    height: 350px;
   }
+
+  .row {
+    margin: 0 0 0 0;
+
+    .select-hand {
+      position: relative;
+      left: 60px;
+      .far {
+        font-size: 80px;
+        height: 0;
+        width: 0;
+      }
+      .far:hover {
+        color: $orange;
+      }
+    }
+  }
+
   .btn-primary {
     background-color: $orange;
     border-color: $orange;

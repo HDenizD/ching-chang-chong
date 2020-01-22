@@ -32,8 +32,8 @@ export default {
 <style lang="scss">
 #app {
   background-color: $dark;
-  height: 100vh;
-  width: auto;
+  height: 1200px;
+  width: 100vw;
   color: $white;
   a {
     color: $white;

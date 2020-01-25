@@ -2,17 +2,17 @@
   <div id="human">
     <div class="text-center">
       <div class="h2 mb-5">Human</div>
-      <i class="play-hand far fa-hand-rock"></i>
+      <i class="far" :class="playIcon"></i>
       <div class="h3 mt-4">{{ activeHand }}</div>
-      <div class="row select-hand mt-4">
+      <div class="row select-hand position-relative mt-4">
         <div class="col-md-4">
-          <i class="far fa-hand-rock" @click="setHand(hands[0].hand)"></i>
+          <i class="far fa-hand-rock" @click="setHand(hands[0])"></i>
         </div>
         <div class="col-md-4">
-          <i class="far fa-hand-paper" @click="setHand(hands[1].hand)"></i>
+          <i class="far fa-hand-paper" @click="setHand(hands[1])"></i>
         </div>
         <div class="col-md-4">
-          <i class="far fa-hand-scissors" @click="setHand(hands[2].hand)"></i>
+          <i class="far fa-hand-scissors" @click="setHand(hands[2])"></i>
         </div>
       </div>
     </div>
@@ -23,30 +23,30 @@
 export default {
   data: () => {
     return {
+      winCounter: 0,
       activeHand: 'Choose a Hand',
+      playIcon: '',
       hands: [
         {
-          hand: 'Rock',
-          strength: 'scissor',
-          weakness: 'paper'
+          name: 'Rock',
+          icon: 'fa-hand-rock'
         },
         {
-          hand: 'Paper',
-          strength: 'rock',
-          weakness: 'scissor'
+          name: 'Paper',
+          icon: 'fa-hand-paper'
         },
         {
-          hand: 'Scissor',
-          strength: 'paper',
-          weakness: 'rock'
+          name: 'Scissor',
+          icon: 'fa-hand-scissors'
         }
       ]
     }
   },
   methods: {
     setHand (hand) {
-      console.log(hand)
-      this.activeHand = hand
+      this.activeHand = hand.name
+      this.playIcon = hand.icon
+      this.$emit('humanChoosedHand', this.activeHand.toLowerCase())
     }
   }
 }

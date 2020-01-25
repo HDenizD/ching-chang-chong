@@ -16,9 +16,8 @@ export default {
 <style lang="scss">
 #app {
   background-color: $dark;
-  padding: 0 25%;
+  padding: 0 0;
   height: 100vh;
-  // width: 100%;
   color: $white;
   a {
     color: $white;

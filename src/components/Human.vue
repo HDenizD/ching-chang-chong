@@ -23,7 +23,6 @@
 export default {
   data: () => {
     return {
-      winCounter: 0,
       activeHand: 'Choose a Hand',
       playIcon: '',
       hands: [

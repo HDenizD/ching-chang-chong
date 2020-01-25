@@ -12,8 +12,7 @@
 export default {
   data: () => {
     return {
-      winCounter: 0,
-      activeHand: 'Ready when you are',
+      activeHand: 'Ready when you are...',
       playIcon: '',
       hands: [
         {

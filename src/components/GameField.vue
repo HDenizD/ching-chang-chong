@@ -42,9 +42,6 @@ export default {
     Human,
     Computer
   },
-  props: {
-    difficulty: String
-  },
   methods: {
     humanHand (payload) {
       this.playMsg.show = true
@@ -61,29 +58,22 @@ export default {
     winLogic (humanHand, computerHand) {
       if (humanHand === computerHand) {
         this.winMsg('Draw!')
-        return console.log('Draw!')
       } else if (humanHand === 'paper' && computerHand === 'rock') {
-        console.log('You win!')
         this.winMsg('You Win!')
         this.gameData.human.score += 1
       } else if (humanHand === 'rock' && computerHand === 'scissor') {
-        console.log('You win!')
         this.winMsg('You Win!')
         this.gameData.human.score += 1
       } else if (humanHand === 'scissor' && computerHand === 'paper') {
-        console.log('You win!')
         this.winMsg('You Win!')
         this.gameData.human.score += 1
       } else if (humanHand === 'scissor' && computerHand === 'rock') {
-        console.log('You lose!')
         this.winMsg('You Lose!')
         this.gameData.computer.score += 1
       } else if (humanHand === 'rock' && computerHand === 'paper') {
-        console.log('You lose!')
         this.winMsg('You Lose!')
         this.gameData.computer.score += 1
       } else if (humanHand === 'paper' && computerHand === 'scissor') {
-        console.log('You lose!')
         this.winMsg('You Lose!')
         this.gameData.computer.score += 1
       }
@@ -106,7 +96,7 @@ export default {
   .row {
     margin: 0 0 0 0;
     .msg {
-      top: 330px;
+      top: 50%;
     }
     .select-hand {
       left: 60px;
@@ -119,20 +109,6 @@ export default {
         color: $orange;
       }
     }
-  }
-
-  .btn-primary {
-    background-color: $orange;
-    border-color: $orange;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 30%);
-  }
-  .btn-primary:focus {
-    background-color: $orange;
-    border-color: $black !important;
-    box-shadow: 0 0 0 0.2rem rgba(255, 51, 0, 0.644);
   }
 }
 </style>

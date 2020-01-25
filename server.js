@@ -1,5 +1,5 @@
-const express = require('express')
-const serveStatic = require('serve-static')
+const express = require('./node_modules/express/index.js')
+const serveStatic = require('./node_modules/serve-static/index.js')
 const path = require('path')
 
 const app = express()

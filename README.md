@@ -1,7 +1,7 @@
 # Ching Chang Chong - A Vue.js Based Rock Paper Scissors Game :video_game:
 ![Preview Screenshot](public/images/application_preview.gif)
 
-### Live Preview
+### Live 
 [Ching Chang Chong](https://ching-chang-chong.herokuapp.com/#/)
 
 ---

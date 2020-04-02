@@ -20,25 +20,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
+  computed: {
+    ...mapState(['hands'])
+  },
   data: () => {
     return {
       activeHand: 'Choose a Hand',
-      playIcon: '',
-      hands: [
-        {
-          name: 'Rock',
-          icon: 'fa-hand-rock'
-        },
-        {
-          name: 'Paper',
-          icon: 'fa-hand-paper'
-        },
-        {
-          name: 'Scissor',
-          icon: 'fa-hand-scissors'
-        }
-      ]
+      playIcon: ''
     }
   },
   methods: {
